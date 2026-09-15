@@ -1,0 +1,340 @@
+[
+  {
+    "id": "email-001",
+    "senderName": "PayPal Security",
+    "senderEmail": "security@paypal.com",
+    "subject": "Your account has been compromised",
+    "timestamp": "2024-03-10T09:15:00Z",
+    "body": "We noticed unusual activity on your account. Click here to secure it: https://paypa1-security.com/verify. Your account will be suspended in 1 hour if no action taken.",
+    "redFlags": [
+      {
+        "id": "rf-01",
+        "type": "typosquatting_domain",
+        "location": "paypa1-security.com",
+        "hint": "Domain uses 1 instead of l",
+        "explanation": "The domain `paypa1-security.com` replaces the letter 'l' with the number '1' — a classic typosquatting trick."
+      },
+      {
+        "id": "rf-02",
+        "type": "urgency_tactic",
+        "location": "Your account will be suspended in 1 hour",
+        "hint": "Artificial urgency",
+        "explanation": "Legitimate companies rarely use 1-hour suspension threats. This is a pressure tactic common in phishing."
+      },
+      {
+        "id": "rf-03",
+        "type": "suspicious_link",
+        "location": "https://paypa1-security.com/verify",
+        "hint": "Link leads to typo domain",
+        "explanation": "The URL directs to the typosquatted domain, not the real paypal.com."
+      }
+    ],
+    "isPhishing": true,
+    "explanation": "This was phishing. Three red flags: typosquatted domain, urgency tactic, and a link to the fake site."
+  },
+  {
+    "id": "email-002",
+    "senderName": "Google Security",
+    "senderEmail": "noreply@google.com",
+    "subject": "Sign-in blocked",
+    "timestamp": "2024-03-10T11:30:00Z",
+    "body": "A sign-in attempt was blocked on your Google Account. If this was you, no action is needed. Your session remains active.",
+    "redFlags": [],
+    "isPhishing": false,
+    "explanation": "This email was safe. The sender domain matches Google exactly, there are no urgency tactics, and no suspicious links or attachments."
+  },
+  {
+    "id": "email-003",
+    "senderName": "Netflix Support",
+    "senderEmail": "support@netf1ix.com",
+    "subject": "Payment failed",
+    "timestamp": "2024-03-10T14:20:00Z",
+    "body": "We're having trouble charging your payment method. To avoid service interruption, update your billing info here: https://netf1ix.com/billing. Offer ends in 24 hours.",
+    "redFlags": [
+      {
+        "id": "rf-04",
+        "type": "typosquatting_domain",
+        "location": "netf1ix.com",
+        "hint": "Domain uses 1 instead of i",
+        "explanation": "The domain `netf1ix.com` replaces the letter 'i' with the number '1' — another typosquatting trick."
+      },
+      {
+        "id": "rf-05",
+        "type": "urgency_tactic",
+        "location": "Offer ends in 24 hours",
+        "hint": "Time pressure",
+        "explanation": "Creating false urgency to prompt quick, unthinking action is a hallmark of phishing."
+      },
+      {
+        "id": "rf-06",
+        "type": "suspicious_link",
+        "location": "https://netf1ix.com/billing",
+        "hint": "Link leads to typo domain",
+        "explanation": "The billing link points to the typosquatted domain, not the real netflix.com."
+      }
+    ],
+    "isPhishing": true,
+    "explanation": "This was phishing. Two typosquatting indicators and an urgency tactic with a link to a fake domain."
+  },
+  {
+    "id": "email-004",
+    "senderName": "Bank of America",
+    "senderEmail": "alerts@bankofamerica.com",
+    "subject": "Unusual login detected",
+    "timestamp": "2024-03-11T08:45:00Z",
+    "body": "We detected a login from a new device on your checking account at 02:30 AM. If this wasn't you, secure your account immediately: https://bankofamerica.com/secure",
+    "redFlags": [],
+    "isPhishing": false,
+    "explanation": "This email was safe. The sender email matches Bank of America exactly. The link goes to the legitimate domain. No urgency tactics or suspicious attachments."
+  },
+  {
+    "id": "email-005",
+    "senderName": "Amazon Security",
+    "senderEmail": "security@amazon-security.com",
+    "subject": "Your Amazon Prime expired",
+    "timestamp": "2024-03-11T16:10:00Z",
+    "body": "Your Amazon Prime membership has expired. Renew now to keep your benefits: https://amazon-security.com/renew. Your membership will be cancelled permanently.",
+    "redFlags": [
+      {
+        "id": "rf-07",
+        "type": "suspicious_sender",
+        "location": "amazon-security.com",
+        "hint": "Sender domain not amazon.com",
+        "explanation": "The sender domain `amazon-security.com` is not the official Amazon domain. Legitimate Amazon emails come from amazon.com."
+      },
+      {
+        "id": "rf-08",
+        "type": "urgency_tactic",
+        "location": "membership will be cancelled permanently",
+        "hint": "Permanent cancellation threat",
+        "explanation": "Threatening permanent loss of service is a pressure tactic used to manipulate victims into acting quickly."
+      },
+      {
+        "id": "rf-09",
+        "type": "suspicious_link",
+        "location": "https://amazon-security.com/renew",
+        "hint": "Link leads to non-amazon domain",
+        "explanation": "The renewal link points to `amazon-security.com`, not the real amazon.com."
+      }
+    ],
+    "isPhishing": true,
+    "explanation": "This was phishing. The sender domain is spoofed (not amazon.com), there's an urgency tactic, and the link leads to a non-Amazon domain."
+  },
+  {
+    "id": "email-006",
+    "senderName": "HR Department",
+    "senderEmail": "hr@company.com",
+    "subject": "Your payslip is ready",
+    "timestamp": "2024-03-12T10:00:00Z",
+    "body": "Your monthly payslip for March is ready for download. Please find attached: payslip_march_2024.pdf",
+    "redFlags": [
+      {
+        "id": "rf-10",
+        "type": "unexpected_attachment",
+        "location": "payslip_march_2024.pdf",
+        "hint": "Unexpected attachment",
+        "explanation": "An unsolicited attachment, especially a PDF, can contain malware. Legitimate payslips are typically accessed through an employee portal."
+      }
+    ],
+    "isPhishing": true,
+    "explanation": "This was phishing. The unexpected PDF attachment is a red flag — legitimate companies typically don't send payslips as unsolicited attachments."
+  },
+  {
+    "id": "email-007",
+    "senderName": "Microsoft Teams",
+    "senderEmail": "no-reply@teams.microsoft.com",
+    "subject": "Meeting invitation",
+    "timestamp": "2024-03-12T15:30:00Z",
+    "body": "You've been invited to a team meeting: \"Q3 Review\" on March 15 at 2 PM. Join via Teams: https://teams.microsoft.com/l/meetup-join/s/abc123def456",
+    "redFlags": [],
+    "isPhishing": false,
+    "explanation": "This email was safe. The sender matches Microsoft Teams exactly. The Teams link is legitimate. No urgency tactics, no suspicious attachments, and the domain is correct."
+  },
+  {
+    "id": "email-008",
+    "senderName": "IT Department",
+    "senderEmail": "it-support@company-update.com",
+    "subject": "Email quota exceeded",
+    "timestamp": "2024-03-13T09:00:00Z",
+    "body": "Your email storage has reached 95% capacity. To continue receiving messages, free up space immediately: https://company-update.com/quota. Your account will be disabled in 2 hours.",
+    "redFlags": [
+      {
+        "id": "rf-11",
+        "type": "typosquatting_domain",
+        "location": "company-update.com",
+        "hint": "Suspicious subdomain/domain",
+        "explanation": "The domain `company-update.com` looks plausible but is not the official company domain. Real IT notifications come from the corporate intranet."
+      },
+      {
+        "id": "rf-12",
+        "type": "urgency_tactic",
+        "location": "Your account will be disabled in 2 hours",
+        "hint": "Time pressure threat",
+        "explanation": "Similar to the 1-hour suspension claim, a 2-hour deadline creates false urgency to prompt quick action without proper verification."
+      },
+      {
+        "id": "rf-13",
+        "type": "suspicious_link",
+        "location": "https://company-update.com/quota",
+        "hint": "Link leads to non-corporate domain",
+        "explanation": "The quota management link points to `company-update.com`, not the internal company system."
+      }
+    ],
+    "isPhishing": true,
+    "explanation": "This was phishing. Typosquatting-ish domain, urgency tactic with account disable threat, and a link to a non-corporate domain."
+  },
+  {
+    "id": "email-009",
+    "senderName": "LinkedIn",
+    "senderEmail": "no-reply@linkedin.com",
+    "subject": "New connection request",
+    "timestamp": "2024-03-13T14:20:00Z",
+    "body": "Jane Doe wants to connect with you on LinkedIn. Accept the request or view her profile: https://linkedin.com/in/janedoe",
+    "redFlags": [],
+    "isPhishing": false,
+    "explanation": "This email was safe. The sender is linkedin.com (legitimate). The link goes to linkedin.com. No urgency tactics, no unexpected attachments. This is a normal LinkedIn notification."
+  },
+  {
+    "id": "email-010",
+    "senderName": "IRS Tax Center",
+    "senderEmail": "tax-refund@irs-gov.net",
+    "subject": "Tax refund pending",
+    "timestamp": "2024-03-14T11:15:00Z",
+    "body": "You are eligible for a tax refund of $842. Claim your refund before the deadline: https://irs-gov.net/refund. Act within 48 hours or the refund will be forfeited.",
+    "redFlags": [
+      {
+        "id": "rf-14",
+        "type": "typosquatting_domain",
+        "location": "irs-gov.net",
+        "hint": "Dot-net instead of dot-gov",
+        "explanation": "The domain `irs-gov.net` uses `.net` instead of the official `.gov` — a common government impersonation trick."
+      },
+      {
+        "id": "rf-15",
+        "type": "urgency_tactic",
+        "location": "Act within 48 hours or the refund will be forfeited",
+        "hint": "48-hour deadline",
+        "explanation": "The IRS does not use 48-hour deadlines for refund claims. This pressure tactic is designed to make victims act before verifying."
+      },
+      {
+        "id": "rf-16",
+        "type": "suspicious_link",
+        "location": "https://irs-gov.net/refund",
+        "hint": "Link leads to non-gov domain",
+        "explanation": "The refund claim link points to `irs-gov.net`, not the real IRS government domain."
+      }
+    ],
+    "isPhishing": true,
+    "explanation": "This was phishing. The domain uses .net instead of .gov, there's a 48-hour urgency tactic, and the link leads to a non-government domain."
+  },
+  {
+    "id": "email-011",
+    "senderName": "Facebook Security",
+    "senderEmail": "security@facebook.com",
+    "subject": "Unusual login from new location",
+    "timestamp": "2024-03-14T16:40:00Z",
+    "body": "We detected a login from an unfamiliar location. If this wasn't you, secure your account now: https://facebook.com/security-checkup",
+    "redFlags": [],
+    "isPhishing": false,
+    "explanation": "This email was safe. The sender is facebook.com (legitimate). The security checkup link goes to facebook.com. No urgency tactics beyond normal security notice, no suspicious attachments."
+  },
+  {
+    "id": "email-012",
+    "senderName": "Netflix",
+    "senderEmail": "notifications@netflix.com",
+    "subject": "Your subscription is cancelled",
+    "timestamp": "2024-03-15T08:30:00Z",
+    "body": "We were unable to process your payment. Your subscription has been cancelled. To reactivate, update your payment method: https://netflix.com/billing",
+    "redFlags": [],
+    "isPhishing": false,
+    "explanation": "This email was safe. The sender is netflix.com (legitimate). The billing link goes to the real netflix.com. This is a normal payment failure notification. No red flags."
+  },
+  {
+    "id": "email-013",
+    "senderName": "Chase Bank",
+    "senderEmail": "secure@chase-security.net",
+    "subject": "Your account is locked",
+    "timestamp": "2024-03-15T13:55:00Z",
+    "body": "Security measures have locked your checking account due to suspicious activity. To unlock your account, verify your identity: https://chase-security.net/verify. You have 24 hours to comply.",
+    "redFlags": [
+      {
+        "id": "rf-17",
+        "type": "typosquatting_domain",
+        "location": "chase-security.net",
+        "hint": "Dot-net instead of proper TLD",
+        "explanation": "The domain `chase-security.net` uses `.net` instead of the banking domain. Legitimate Chase communications use chase.com."
+      },
+      {
+        "id": "rf-18",
+        "type": "urgency_tactic",
+        "location": "You have 24 hours to comply",
+        "hint": "24-hour compliance deadline",
+        "explanation": "A 24-hour ultimatum to unlock your account is a pressure tactic. Banks typically use longer windows or phone verification."
+      },
+      {
+        "id": "rf-19",
+        "type": "suspicious_link",
+        "location": "https://chase-security.net/verify",
+        "hint": "Link leads to non-chase domain",
+        "explanation": "The verification link points to `chase-security.net`, not the real chase.com."
+      }
+    ],
+    "isPhishing": true,
+    "explanation": "This was phishing. The domain uses .net instead of .com, there's a 24-hour urgency tactic, and the link leads to a non-banking domain."
+  },
+  {
+    "id": "email-014",
+    "senderName": "Shipping Carrier",
+    "senderEmail": "tracking@ups.com",
+    "subject": "Package delivery attempt failed",
+    "timestamp": "2024-03-16T10:15:00Z",
+    "body": "Your package at the UPS facility could not be delivered. Reschedule delivery: https://ups.com/reschedule",
+    "redFlags": [],
+    "isPhishing": false,
+    "explanation": "This email was safe. The sender is ups.com (legitimate). The reschedule link goes to the real UPS domain. This is a normal delivery notification. No red flags."
+  },
+  {
+    "id": "email-015",
+    "senderName": "Zoom Security",
+    "senderEmail": "admin@zoom-security.net",
+    "subject": "Meeting recording available",
+    "timestamp": "2024-03-16T15:45:00Z",
+    "body": "A local recording of your Zoom meeting from March 14 is available. Download here: https://zoom-security.net/download. Files are deleted after 7 days.",
+    "redFlags": [
+      {
+        "id": "rf-20",
+        "type": "suspicious_sender",
+        "location": "zoom-security.net",
+        "hint": "Sender domain not zoom.us",
+        "explanation": "The sender domain `zoom-security.net` is not the official Zoom domain. Legitimate Zoom emails come from zoom.us."
+      },
+      {
+        "id": "rf-21",
+        "type": "unexpected_attachment",
+        "location": "Download link",
+        "hint": "Download link for meeting recording",
+        "explanation": "Unsolicited download links for meeting recordings can deliver malware. Legitimate Zoom recordings are accessed through the Zoom web portal."
+      },
+      {
+        "id": "rf-22",
+        "type": "suspicious_link",
+        "location": "https://zoom-security.net/download",
+        "hint": "Link leads to non-zoom domain",
+        "explanation": "The download link points to `zoom-security.net`, not the real zoom.us domain."
+      }
+    ],
+    "isPhishing": true,
+    "explanation": "This was phishing. The sender domain is spoofed (not zoom.us), there's an unexpected download link, and the link leads to a non-Zoom domain."
+  },
+  {
+    "id": "email-016",
+    "senderName": "PayPal Support",
+    "senderEmail": "support@paypal.com",
+    "subject": "Your password has been updated",
+    "timestamp": "2024-03-17T09:30:00Z",
+    "body": "Your PayPal password was successfully updated on March 17 at 08:15 AM. If you did not make this change, secure your account immediately: https://paypal.com/security-alert",
+    "redFlags": [],
+    "isPhishing": false,
+    "explanation": "This email was safe. The sender is paypal.com (legitimate). The security alert link goes to the real paypal.com. This is a legitimate password change notification. No red flags."
+  }
+]
